@@ -1,5 +1,5 @@
-const vCodes = require('./vcodes.index');
-const dbl = new vCodes("BOT TOKEN");
+const tip = require('./vcodes.index');
+const dbl = new tip("BOT TOKEN");
 
 
 dbl.on("ready", (bot) => {
