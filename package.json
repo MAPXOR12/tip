@@ -1,34 +1,23 @@
 {
-  "name": "vcodes.js",
+  "name": "tip",
   "version": "3.0.0",
   "description": "It is a module for vCodes.xyz.",
-  "main": "vcodes.index.js",
+  "main": "tip.index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vcodes-xyz/vcodes.js.git"
+    "url": "git+https://github.com/MAPXOR12/tip.git"
   },
   "keywords": [
     "dbl",
     "botlist",
-    "vcodes"
+    "tip"
   ],
-  "authors": [
-    {
-      "name": "Void Development",
-      "email": "contact@voiddevs.org",
-      "url": "https://voiddevs.org"
-    },
-    {
-      "name": "clqu",
-      "email": "clqu@voiddevs.org",
-      "url": "https://clqu.live"
-    }
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/vcodes-xyz/vcodes.js/issues"
+    "url": "https://github.com/MAPXOR12/tip/issues"
   },
-  "homepage": "https://github.com/vcodes-xyz/vcodes.js#readme",
+  "homepage": "https://github.com/MAPXOR12/tip#readme",
   "dependencies": {
     "node-fetch": "^2.6.1",
     "ws": "^8.3.0"
