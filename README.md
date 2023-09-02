@@ -1,5 +1,4 @@
 ![npm install](https://nodei.co/npm/vcodes.js.png?mini=false)<br/>
-[Do you need my help? Visit our Discord server.](https://vcodes.xyz/discord)
 
 # Installation
 ```console
