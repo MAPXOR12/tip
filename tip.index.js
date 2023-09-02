@@ -1,15 +1,15 @@
 const EventEmitter = require("events");
 const WebSocket = require("ws");
 const fetch = require("node-fetch");
-const { baseUrl } = require("./vcodes.config");
+const { baseUrl } = require("./tip.config");
 
-module.exports = class vCodes extends EventEmitter {
+module.exports = class tip extends EventEmitter {
 	constructor(token) {
 		super();
-		this.ws = new WebSocket("wss://api.vcodes.xyz/v1/gateway?token=" + token);
+		this.ws = new WebSocket("wss://api.tip.prembot.gq/v1/gateway?token=" + token);
 		this.ws.on("message", async msg => {
 			const message = JSON.parse(msg.toString());
-			if (message.type == "ERROR") throw new Error("(vcodes.js): " + message.message);
+			if (message.type == "ERROR") throw new Error("(tip): " + message.message);
 			if (message.type == "CONNECT") {
 				this.token = token
 				return this.emit("ready", message.data);
@@ -29,7 +29,7 @@ module.exports = class vCodes extends EventEmitter {
 
 	async checkVote(id) {
 		if (isNaN(id)) {
-		  throw new Error("(vcodes.js): You entered invalid id because ids only number. (checkVote Error)", true)
+		  throw new Error("(tip): You entered invalid id because ids only number. (checkVote Error)", true)
 		  return new Promise((resolve, reject) => {
 			resolve(false);
 		  });
@@ -40,7 +40,7 @@ module.exports = class vCodes extends EventEmitter {
 		  method: "POST"
 		}).then(res => res.json());
 		if(request.error) {
-		  throw new Error('(vcodes.js): '+request.error, true)
+		  throw new Error('(tip): '+request.error, true)
 		  return new Promise((resolve, reject) => {
 			resolve(false);
 		  });
@@ -64,7 +64,7 @@ module.exports = class vCodes extends EventEmitter {
 		  method: "POST"
 		}).then(res => res.json());
 		if(request.error) {
-		  throw new Error('(vcodes.js): '+request.error, true);
+		  throw new Error('(tip): '+request.error, true);
 		} else {
 		  if(request.success) {
 			if(!listener) {
@@ -73,7 +73,7 @@ module.exports = class vCodes extends EventEmitter {
 			  return listener();
 			}
 		  } else {
-			throw new Error('(vcodes.js): '+request.error, true);
+			throw new Error('(tip): '+request.error, true);
 		  }
 		}
 	  }
